@@ -25,4 +25,4 @@
 1. cd web-mortage-calc
 2. mvnw
 
-### The web implementation is unfortunately very barebones due to time restrictions
+### This should be a single maven project instead of two separate ones but due to time restrictions the web implementation is separate and very barebones.
