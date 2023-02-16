@@ -30,6 +30,13 @@ mvn clean package -Pproduction
 docker build -t web-calc .
 docker run -p 8080:8080 web-calc
 ```
+
+#### Alternatively
+```
+cd cli-mortage-calc
+mvnw
+```
+
 The web app should then be running on localhost:8080
 
 ### This should be a single maven project instead of two separate ones but due to time restrictions the web implementation is separate and very barebones.
