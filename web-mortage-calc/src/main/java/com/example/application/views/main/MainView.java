@@ -34,12 +34,12 @@ public class MainView extends VerticalLayout {
         }
         TextField nameField = new TextField("Name");
         NumberField totalField = new NumberField("Total Amount");
-        IntegerField interestField = new IntegerField("Interest");
+        NumberField interestField = new NumberField("Interest");
         IntegerField yearsField = new IntegerField("Years");
         Button addButton = new Button("Add");
         addButton.addClickListener(click -> {
             prospectNr.getAndIncrement();
-            Prospect prospect = new Prospect(nameField.getValue(), totalField.getValue()*100, interestField.getValue()*100, yearsField.getValue());
+            Prospect prospect = new Prospect(nameField.getValue(), (int) ((double)totalField.getValue()*100), (int) ((double) interestField.getValue()*100), yearsField.getValue());
             prospectList.add(new H4(prospect.toString(prospectNr.get())));
         });
         addButton.addClickShortcut(Key.ENTER);
