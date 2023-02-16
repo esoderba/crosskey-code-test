@@ -2,27 +2,34 @@
 
 ## Local cli app
 
-### Run using the following commands
-1. cd cli-mortage-calc
-2. nvm install
-#### Run via Docker image
-3. docker build -t cli-mortage-calculator
-4. docker run cli-mortage-calculator
-#### Run locally
-3. java -jar /target/cli-mortage-calculator.jar "filepath"
-
+### Run using docker
+```
+cd cli-mortage-calc
+nvm install
+docker build -t cli-mortage-calculator
+docker run cli-mortage-calculator
+```
+#### Alternatively
+```
+cd cli-mortage-calc
+nvm install
+java -jar /target/cli-mortage-calculator.jar "filepath"
+```
 ### Run tests
-1. mvn test
-
+```
+cd cli-mortage-calc
+mvn test
+```
 
 ## Vaadin based web interface
-
+Demo: https://web-calc.fly.dev/
 ### Run using the following commands
-1. cd web-mortage-calc
-2. mvn install
-3. java -jar /target/webmortagecalc-1.0-SNAPSHOT.jar
-### Alternatively
-1. cd web-mortage-calc
-2. mvnw
+```
+cd web-mortage-calc
+mvn clean package -Pproduction
+docker build -t web-calc .
+docker run -p 8080:8080 web-calc
+```
+The web app should then be running on localhost:8080
 
 ### This should be a single maven project instead of two separate ones but due to time restrictions the web implementation is separate and very barebones.
